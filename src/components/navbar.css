@@ -1,0 +1,125 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.nav--scrolled {
+  background: rgba(12, 15, 32, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 68px;
+}
+
+.nav__brand {
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav__brand-bracket { color: var(--cyan); }
+
+.nav__tabs {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav__tabs::-webkit-scrollbar { display: none; }
+
+.nav__tab {
+  position: relative;
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  padding: 10px 14px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.nav__tab:hover { color: var(--text); }
+.nav__tab--active { color: var(--text); }
+
+.nav__underline {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 2px;
+}
+
+.nav__cta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--lime);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+.nav__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(168,242,160,0.25);
+}
+
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+}
+.nav__burger span {
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+.nav__mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav__tabs { display: none; }
+  .nav__cta { display: none; }
+  .nav__burger { display: flex; }
+  .nav__mobile {
+    display: flex;
+    flex-direction: column;
+    background: var(--ink-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__mobile button {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 14px 20px;
+    font-family: var(--font-mono);
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__mobile button.is-active { color: var(--cyan); }
+}

@@ -1,0 +1,90 @@
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 460px));
+  column-gap: 56px;
+  row-gap: 32px;
+}
+
+.repo-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.repo-card:hover {
+  border-color: var(--muted-2);
+  box-shadow: 0 20px 40px -22px rgba(143,227,255,0.18);
+}
+
+.repo-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.repo-card__icon {
+  color: var(--violet);
+  font-size: 18px;
+}
+.repo-card__status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 9px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.status--production { color: var(--lime); border-color: rgba(168,242,160,0.3); }
+.status--open-source { color: var(--cyan); border-color: rgba(143,227,255,0.3); }
+.status--in-progress { color: var(--amber); border-color: rgba(255,203,122,0.3); }
+
+.repo-card__name {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.repo-card__desc {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.repo-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.repo-card__stack span {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+
+.repo-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+.repo-card__stars { color: var(--amber); }
+.repo-card__actions { display: flex; gap: 16px; }
+.repo-card__link { color: var(--cyan); transition: transform 0.15s ease; display: inline-block; }
+.repo-card__link:hover { transform: translateX(3px); }
+.repo-card__link--demo { color: var(--lime); }
+
+@media (max-width: 780px) {
+  .projects__grid { grid-template-columns: 1fr; }
+}
