@@ -63,7 +63,7 @@ export default function Certifications() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow"><span className="ln">04</span> // certifications.json</div>
+          <div className="eyebrow"><span className="ln">04</span> // certifications</div>
           <h2 className="section-title">Proof of work</h2>
           <p className="section-sub">Courses and exams I've actually finished — each one links to the real certificate.</p>
         </motion.div>

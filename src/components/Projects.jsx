@@ -1,22 +1,20 @@
 import { motion } from 'framer-motion'
 import './projects.css'
 
-// TODO: replace `repo`/`demo` with your real GitHub repo and live demo URLs.
-// Edit the placeholder cards below with your own project details,
-// or add more objects to this array (same shape) as you build them.
+
 const PROJECTS = [
   {
     name: 'MyShop — Ecommerce',
     desc: 'A full-stack-feel e-commerce storefront — product browsing by category (mobiles, laptops, fashion, accessories), cart with persistent storage, and email/password sign-up & login.',
     stack: ['React', 'React Router', 'Context API', 'Vite'],
-    stars: 0,
+    stars: 4,
     status: 'production',
-    repo: 'https://github.com/karansu/MyShop-Ecommerce',
+    repo: 'https://github.com/karan-suryvanshi/MyShop-Ecommerce',
     demo: 'https://karan-ecom.netlify.app',
   },
   {
-    name: 'your-project-name',
-    desc: 'Placeholder — replace with a short description of what this project does and who it is for.',
+    name: 'Comming Soon',
+    desc: 'Comming Soon.',
     stack: ['Tech', 'Stack', 'Here'],
     stars: 0,
     status: 'in progress',
@@ -24,8 +22,8 @@ const PROJECTS = [
     demo: '#',
   },
   {
-    name: 'your-project-name',
-    desc: 'Placeholder — replace with a short description of what this project does and who it is for.',
+    name: 'Comming Soon',
+    desc: 'Comming Soon.',
     stack: ['Tech', 'Stack', 'Here'],
     stars: 0,
     status: 'in progress',
@@ -33,8 +31,8 @@ const PROJECTS = [
     demo: '#',
   },
   {
-    name: 'your-project-name',
-    desc: 'Placeholder — replace with a short description of what this project does and who it is for.',
+    name: 'Comming Soon',
+    desc: 'Comming Soon.',
     stack: ['Tech', 'Stack', 'Here'],
     stars: 0,
     status: 'in progress',

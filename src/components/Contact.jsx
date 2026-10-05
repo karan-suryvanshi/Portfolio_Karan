@@ -72,7 +72,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className="eyebrow">
-            <span className="ln">07</span> // contact.js
+            <span className="ln">07</span> // contact.
           </div>
 
           <h2 className="section-title">
@@ -258,7 +258,7 @@ export default function Contact() {
               <div>
 
                 <a
-                  href="https://github.com/karansu"
+                  href="https://github.com/karan-suryvanshi"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

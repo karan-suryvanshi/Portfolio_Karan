@@ -37,7 +37,7 @@ export default function Skills() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="eyebrow"><span className="ln">03</span> // skills.json</div>
+          <div className="eyebrow"><span className="ln">03</span> // skills</div>
           <h2 className="section-title">What I reach for</h2>
           <p className="section-sub">A working toolkit, kept current — not a wall of every logo I've ever clicked on.</p>
         </motion.div>
