@@ -16,7 +16,7 @@ const LOG = [
    
     role: 'Personal Projects',
     org: 'Self-directed',
-    period: '2024 — Present',
+    period: '2026— Present',
     msg: 'Built and shipped full-stack projects like MyShop (React e-commerce app) to learn React, routing, and state management by doing.',
   },
   {
