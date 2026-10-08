@@ -33,6 +33,15 @@ const CERTS = [
     score: '77.50%',
     certificateUrl: '/certificates/JAVA-Training-Certificate.pdf',
   },
+
+  {
+    title: 'BOOTSTRAP Training',
+    issuer: 'EduPyramids · IIT Bombay Spoken Tutorial',
+    via: 'via Seven Mentor and Training',
+    date: ' October 2026',
+    score: '90.00%',
+    certificateUrl: '/certificates/BOOTSTRAP-Training-Certificate.pdf',
+  },
   // Example of what to paste in once the Java course finishes:
   // {
   //   title: 'Full Stack Java Development',

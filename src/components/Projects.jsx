@@ -7,7 +7,7 @@ const PROJECTS = [
     name: 'MyShop — Ecommerce',
     desc: 'A full-stack-feel e-commerce storefront — product browsing by category (mobiles, laptops, fashion, accessories), cart with persistent storage, and email/password sign-up & login.',
     stack: ['React', 'React Router', 'Context API', 'Vite'],
-    stars: 4,
+    stars: 4/5,
     status: 'production',
     repo: 'https://github.com/karan-suryvanshi/MyShop-Ecommerce',
     demo: 'https://karan-ecom.netlify.app',
