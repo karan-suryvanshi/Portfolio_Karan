@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 import './navbar.css'
 
 const TABS = [
-  { id: 'home', label: 'home.jsx' },
-  { id: 'about', label: 'about.jsx' },
-  { id: 'skills', label: 'skills.json' },
-  { id: 'certifications', label: 'certifications.json' },
-  { id: 'work', label: 'work.jsx' },
+  { id: 'home', label: 'home' },
+  { id: 'about', label: 'about' },
+  { id: 'skills', label: 'skills' },
+  { id: 'certifications', label: 'certifications' },
+  { id: 'work', label: 'work' },
   { id: 'experience', label: 'experience.log' },
-  { id: 'contact', label: 'contact.js' },
+  { id: 'contact', label: 'contact' },
 ]
 
 export default function Navbar() {

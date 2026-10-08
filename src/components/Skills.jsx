@@ -5,26 +5,26 @@ const CATEGORIES = [
   {
     key: 'frontend',
     label: 'frontend',
-    items: ['React', 'JavaScript (ES2023)', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+    items: ['HTML5','CSS3','React','JavaScript', 'TypeScript', 'Vite', 'Tailwind CSS','Framer Motion'],
   },
   {
     key: 'backend',
     label: 'backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'PostgreSQL', 'Redis'],
+    items: ['Java', 'Spring Boot','REST APIs','PostgreSQL', 'SQL'],
   },
   {
     key: 'tooling',
     label: 'tooling',
-    items: ['Docker', 'Git', 'CI/CD', 'AWS', 'Figma', 'Vitest'],
+    items: ['Docker', 'Git', 'CI/CD', 'AWS','Vitest'],
   },
 ]
 
 const PROFICIENCY = [
   { name: 'React / JavaScript', value: 85 },
-  { name: 'Node.js / APIs', value: 75 },
+  { name: 'Java / APIs', value: 75 },
   { name: 'Databases (SQL)', value: 70 },
   { name: 'UI / UX craft', value: 80 },
-  { name: 'DevOps & deployment', value: 55 },
+  { name: 'DevOps & deployment', value: 50 },
 ]
 
 export default function Skills() {
@@ -52,7 +52,7 @@ export default function Skills() {
           >
             <div className="terminal__bar">
               <span className="dot dot--r" /><span className="dot dot--y" /><span className="dot dot--g" />
-              <span className="terminal__title">skills.json</span>
+              <span className="terminal__title">skills.</span>
             </div>
             <div className="skills__json-body">
               <span className="code-plain">{'{'}</span>

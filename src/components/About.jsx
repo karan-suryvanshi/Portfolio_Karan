@@ -67,7 +67,7 @@ export default function About() {
             variants={reveal}
           >
             {[
-              { k: 'Projects built', v: '5+' },
+              { k: 'Projects built', v: '3+' },
               { k: 'Certifications earned', v: '3+' }, // TODO: bump this as you add more certs
               { k: 'Lines of coffee', v: '∞' },
               { k: 'Bugs fixed (this week)', v: '17' },

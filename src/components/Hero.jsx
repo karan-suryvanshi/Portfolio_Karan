@@ -74,8 +74,8 @@ export default function Hero() {
             </a>
           </div>
           <div className="hero__meta">
-            <div><strong>10+</strong><span>projects built</span></div>
-            <div><strong>1+</strong><span>certifications</span></div>
+            <div><strong>3+</strong><span>projects built</span></div>
+            <div><strong>3+</strong><span>certifications</span></div>
             <div><strong>Fresher</strong><span>ready to join</span></div>
           </div>
         </motion.div>
