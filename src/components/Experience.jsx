@@ -6,25 +6,22 @@ import './experience.css'
 // new certificates there instead of here.
 const LOG = [
   {
-
-    role: 'Full Stack Java Training (in progress)',
-    org: 'Seven Mentor and Training, Pune',
-    period: 'Present',
-    msg: 'Currently completing a full-stack Java course — wrapping up soon, then diving straight into job applications.',
+    role: 'B.Sc, Computer Science',
+    org: 'Shiv Chhatrapati College, Sambhaji Nagar',
+    period: '2021 — 2025',
+    msg: 'Coursework in programming fundamentals, data structures, and web systems.',
   },
   {
-   
     role: 'Personal Projects',
     org: 'Self-directed',
     period: '2026— Present',
     msg: 'Built and shipped full-stack projects like MyShop (React e-commerce app) to learn React, routing, and state management by doing.',
   },
   {
-    
-    role: 'B.Sc, Computer Science',
-    org: 'Shiv Chhatrapati College, Sambhaji Nagar',
-    period: '2021 — 2025',
-    msg: 'Coursework in programming fundamentals, data structures, and web systems.',
+    role: 'Full Stack Java Training (in progress)',
+    org: 'Seven Mentor and Training, Pune',
+    period: 'Present',
+    msg: 'Currently completing a full-stack Java course — wrapping up soon, then diving straight into job applications.',
   },
 ]
 
@@ -47,7 +44,7 @@ export default function Experience() {
           {LOG.map((entry, i) => (
             <motion.div
               className="log__entry"
-              key={entry.hash}
+              key={entry.role}
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.4 }}
@@ -59,7 +56,6 @@ export default function Experience() {
               </div>
               <div className="log__content">
                 <div className="log__top">
-                  <span className="log__hash">{entry.hash}</span>
                   <span className="log__period">{entry.period}</span>
                 </div>
                 <h3 className="log__role">{entry.role}</h3>

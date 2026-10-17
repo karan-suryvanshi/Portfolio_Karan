@@ -86,7 +86,11 @@
 
 .nav__burger {
   display: none;
+  width: 44px;
+  height: 44px;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 4px;
   background: none;
   border: none;
@@ -105,7 +109,7 @@
 @media (max-width: 860px) {
   .nav__tabs { display: none; }
   .nav__cta { display: none; }
-  .nav__burger { display: flex; }
+  .nav__burger { display: flex; margin-left: auto; }
   .nav__mobile {
     display: flex;
     flex-direction: column;
@@ -116,10 +120,19 @@
     background: none;
     border: none;
     text-align: left;
-    padding: 14px 20px;
+    min-height: 48px;
+    padding: 12px 20px;
     font-family: var(--font-mono);
     color: var(--muted);
     border-bottom: 1px solid var(--line);
   }
   .nav__mobile button.is-active { color: var(--cyan); }
+  .nav__mobile-resume {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    font-family: var(--font-mono);
+    color: var(--lime);
+  }
 }

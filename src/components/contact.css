@@ -91,7 +91,13 @@
   width: 100%;
   box-sizing: border-box;
 }
-.contact__card a { color: var(--cyan); transition: color 0.15s ease; }
+.contact__card a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--cyan);
+  transition: color 0.15s ease;
+}
 .contact__card a:hover { color: var(--lime); }
 .contact__card span:not(.code-key) { color: var(--muted); }
 

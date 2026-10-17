@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import { RESUME_URL } from '../constants.js'
 import './contact.css'
 
 export default function Contact() {
@@ -245,6 +246,18 @@ export default function Contact() {
               <span>
                 Pune, India · Remote-friendly
               </span>
+
+            </div>
+
+            <div className="contact__card">
+
+              <span className="code-key">
+                resume
+              </span>
+
+              <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+                View resume ↗
+              </a>
 
             </div>
 

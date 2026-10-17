@@ -15,7 +15,7 @@ const CATEGORIES = [
   {
     key: 'tooling',
     label: 'tooling',
-    items: ['Docker', 'Git', 'CI/CD', 'AWS','Vitest'],
+    items: ['Docker', 'Git', 'CI/CD', 'AWS', 'Vitest', 'Postman'],
   },
 ]
 
@@ -85,7 +85,14 @@ export default function Skills() {
                   <span>{p.name}</span>
                   <span className="bar__value">{p.value}%</span>
                 </div>
-                <div className="bar__track">
+                <div
+                  className="bar__track"
+                  role="progressbar"
+                  aria-label={`${p.name} proficiency`}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={p.value}
+                >
                   <motion.div
                     className="bar__fill"
                     initial={{ width: 0 }}

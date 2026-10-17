@@ -5,39 +5,23 @@ import './projects.css'
 const PROJECTS = [
   {
     name: 'MyShop — Ecommerce',
-    desc: 'A full-stack-feel e-commerce storefront — product browsing by category (mobiles, laptops, fashion, accessories), cart with persistent storage, and email/password sign-up & login.',
+    desc: 'An e-commerce storefront with category-based product browsing, a persistent cart, and sign-up and login flows.',
     stack: ['React', 'React Router', 'Context API', 'Vite'],
     stars: 4.5,
     status: 'production',
     repo: 'https://github.com/karan-suryvanshi/MyShop-Ecommerce',
     demo: 'https://karan-ecom.netlify.app',
+    preview: '/project-previews/myshop.jpg',
   },
   {
-    name: 'cartzilla-grocery-store',
-    desc: 'Cartzilla Grocery Store is a fully responsive e-commerce web app for online grocery shopping. It includes product browsing, search and filters, a shopping cart, user login, and a checkout flow, all wrapped in a clean, modern UI. Deployed on Netlify.',
+    name: 'Cartzilla Grocery Store',
+    desc: 'A grocery storefront with product browsing, search and filters, a shopping cart, login, and a checkout flow.',
     stack: ['React', 'React Router', 'Context API', 'Vite'],
     stars: 4.5,
     status: 'production',
     repo: 'https://github.com/karan-suryvanshi/Grocery_Store_Web.git',
     demo: 'https://cartzilla-grocery-store.netlify.app/',
-  },
-  {
-    name: 'Comming Soon',
-    desc: 'Comming Soon.',
-    stack: ['Tech', 'Stack', 'Here'],
-    stars: 0,
-    status: 'in progress',
-    repo: '#',
-    demo: '#',
-  },
-  {
-    name: 'Comming Soon',
-    desc: 'Comming Soon.',
-    stack: ['Tech', 'Stack', 'Here'],
-    stars: 0,
-    status: 'in progress',
-    repo: '#',
-    demo: '#',
+    preview: '/project-previews/cartzilla.jpg',
   },
 ]
 
@@ -62,7 +46,7 @@ export default function Projects() {
         >
           <div className="eyebrow"><span className="ln">05</span> // work.jsx</div>
           <h2 className="section-title">Selected builds</h2>
-          <p className="section-sub">A few projects worth a second look — the rest live on GitHub.</p>
+          <p className="section-sub">Two shipped projects, with live demos and source code.</p>
         </motion.div>
 
         <motion.div
@@ -74,6 +58,21 @@ export default function Projects() {
         >
           {PROJECTS.map(p => (
             <motion.article className="repo-card" key={p.name} variants={item} whileHover={{ y: -6 }}>
+              <div className="repo-card__preview" aria-hidden="true">
+                <div className="repo-card__preview-bar">
+                  <span className="dot dot--r" />
+                  <span className="dot dot--y" />
+                  <span className="dot dot--g" />
+                  <span>site preview</span>
+                </div>
+                <img
+                  className="repo-card__preview-image"
+                  src={p.preview}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div className="repo-card__top">
                 <span className="repo-card__icon">⌘</span>
                 <span className={`repo-card__status status--${p.status.replace(' ', '-')}`}>{p.status}</span>

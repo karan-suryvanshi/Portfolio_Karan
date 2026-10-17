@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { RESUME_URL } from '../constants.js'
 import './navbar.css'
 
 const TABS = [
@@ -60,8 +61,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a className="nav__cta" href="#contact" onClick={(e) => { e.preventDefault(); go('contact') }}>
-          run()<span className="blink">_</span>
+        <a className="nav__cta" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+          resume ↗
         </a>
 
         <button className="nav__burger" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
@@ -76,6 +77,9 @@ export default function Navbar() {
               {t.label}
             </button>
           ))}
+          <a className="nav__mobile-resume" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+            view resume ↗
+          </a>
         </div>
       )}
     </header>

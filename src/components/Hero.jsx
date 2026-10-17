@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { RESUME_URL } from '../constants.js'
 import './hero.css'
 
 const LINES = [
@@ -37,7 +38,7 @@ function useTypewriter(lines, speed = 18, lineDelay = 140) {
     }
     run()
     return () => { cancelled = true }
-  }, [])
+  }, [lines, speed, lineDelay])
 
   return { rendered, done }
 }
@@ -72,10 +73,13 @@ export default function Hero() {
             <a href="#contact" className="btn btn--ghost" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>
               Say hello
             </a>
+            <a className="btn btn--ghost" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
+              View resume ↗
+            </a>
           </div>
           <div className="hero__meta">
-            <div><strong>3+</strong><span>projects built</span></div>
-            <div><strong>3+</strong><span>certifications</span></div>
+            <div><strong>2</strong><span>featured projects</span></div>
+            <div><strong>4</strong><span>certifications</span></div>
             <div><strong>Fresher</strong><span>ready to join</span></div>
           </div>
         </motion.div>

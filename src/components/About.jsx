@@ -17,7 +17,7 @@ export default function About() {
           variants={reveal}
         >
           <div className="eyebrow"><span className="ln">02</span> // about.jsx</div>
-          <h2 className="section-title">Who's behind the <span className="dot">.</span>keyboard</h2>
+          <h2 className="section-title">Who's behind the <span className="dot"></span>keyboard</h2>
         </motion.div>
 
         <div className="about__grid">
@@ -29,31 +29,24 @@ export default function About() {
             variants={reveal}
           >
             <p>
-              I'm Karan — a fresher full-stack developer who learns by
-              shipping real projects instead of just following tutorials.
-              I care about software that feels obvious to use, and I'm just
-              getting started proving that in production.
+              I'm Karan, an aspiring developer who learns by building and
+              shipping projects. I focus on creating responsive, easy-to-use
+              interfaces with React and JavaScript.
             </p>
             <p>
-              Through college and self-study, I've built full end-to-end
-              applications — from database schema to the pixel on top of
-              it — using React on the front end and Node.js APIs behind it.
-              No professional job yet, but a solid stack of finished
-              personal projects to show for it.
+              My portfolio features two e-commerce projects built with React,
+              React Router, Context API, and Vite. I'm continuing to grow my
+              backend skills alongside my frontend work.
             </p>
             <p>
-              I'm actively looking for my first opportunity as a developer,
-              where I can keep learning fast, take feedback well, and start
-              contributing to real products from day one.
-            </p>
-            <p>
-              Outside of code: cricket on weekends, a growing lo-fi playlist
-              for late-night debugging sessions, and — fittingly — rebuilding
-              this portfolio every few months as I learn something new.
+              I'm looking for my first developer opportunity where I can learn
+              from a team, take feedback, and contribute to real products.
+              Outside of code, I enjoy cricket and rebuilding this portfolio
+              as I learn.
             </p>
 
             <div className="about__tags">
-              {['Fast learner', 'Detail-obsessed', 'Self-taught', 'Team player'].map(t => (
+              {['React', 'React Router', 'Context API', 'Open to opportunities'].map(t => (
                 <span className="code-tag" key={t}>{t}</span>
               ))}
             </div>
@@ -67,10 +60,10 @@ export default function About() {
             variants={reveal}
           >
             {[
-              { k: 'Projects built', v: '3+' },
-              { k: 'Certifications earned', v: '3+' }, // TODO: bump this as you add more certs
-              { k: 'Lines of coffee', v: '∞' },
-              { k: 'Bugs fixed (this week)', v: '17' },
+              { k: 'Featured projects', v: '2' },
+              { k: 'Certificates', v: '4' },
+              { k: 'Core stack', v: 'React + JS' },
+              { k: 'Next step', v: 'First role' },
             ].map(s => (
               <div className="stat-card" key={s.k}>
                 <span className="stat-card__value">{s.v}</span>

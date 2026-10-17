@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Color tokens — editor-theme palette, not a single-accent default */
   --ink: #0c0f20;
   --ink-2: #10142a;
   --panel: #151a35;
@@ -11,11 +10,11 @@
   --muted: #8a90bd;
   --muted-2: #5f6494;
 
-  --violet: #b9a6ff;   /* keyword */
-  --lime: #a8f2a0;     /* string / success */
-  --amber: #ffcb7a;    /* const / number */
-  --coral: #ff9b9b;    /* tag / error */
-  --cyan: #8fe3ff;     /* function / link */
+  --violet: #b9a6ff;
+  --lime: #a8f2a0;
+  --amber: #ffcb7a;
+  --coral: #ff9b9b;
+  --cyan: #8fe3ff;
 
   --font-display: 'JetBrains Mono', ui-monospace, monospace;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -55,8 +54,23 @@ body::before {
     radial-gradient(circle at 15% 10%, rgba(185,166,255,0.08), transparent 40%),
     radial-gradient(circle at 85% 30%, rgba(143,227,255,0.06), transparent 40%),
     radial-gradient(circle at 50% 90%, rgba(168,242,160,0.05), transparent 45%);
+  background-size: 120% 120%, 120% 120%, 120% 120%;
+  background-position: 0% 0%, 100% 0%, 50% 100%;
   pointer-events: none;
   z-index: 0;
+  animation: ambient-glow 32s ease-in-out infinite alternate;
+}
+
+@keyframes ambient-glow {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%;
+  }
+  50% {
+    background-position: 12% 18%, 88% 22%, 48% 82%;
+  }
+  100% {
+    background-position: 22% 8%, 78% 12%, 52% 90%;
+  }
 }
 
 ::selection { background: var(--violet); color: var(--ink); }

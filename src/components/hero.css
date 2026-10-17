@@ -37,6 +37,7 @@
 
 .hero__actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 48px;
 }
@@ -45,6 +46,7 @@
   font-family: var(--font-mono);
   font-size: 14px;
   font-weight: 600;
+  min-height: 44px;
   padding: 13px 22px;
   border-radius: 8px;
   display: inline-flex;
@@ -103,12 +105,34 @@
 }
 
 .terminal {
+  position: relative;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
   max-width: 100%;
+}
+
+.terminal::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: -40% 0 auto;
+  height: 36%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(143,227,255,0.045),
+    transparent
+  );
+  pointer-events: none;
+  animation: terminal-scan 9s ease-in-out infinite;
+}
+
+@keyframes terminal-scan {
+  0%, 20% { transform: translateY(-100%); }
+  80%, 100% { transform: translateY(420%); }
 }
 
 .terminal__bar {
@@ -166,4 +190,9 @@
   .hero { padding-top: 130px; }
   .hero__meta { gap: 24px; }
   .terminal__body { font-size: 12.5px; }
+}
+
+@media (max-width: 480px) {
+  .hero__actions { gap: 10px; }
+  .hero__actions .btn { min-height: 44px; padding: 11px 14px; font-size: 12px; }
 }
