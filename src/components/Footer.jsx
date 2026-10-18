@@ -8,7 +8,10 @@ export default function Footer() {
         <span className="footer__note">© {new Date().getFullYear()} Karan Suryavanshi. All rights reserved.</span>
         <button
           className="footer__top"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ? 'auto' : 'smooth',
+          })}
         >
           back to top ↑
         </button>

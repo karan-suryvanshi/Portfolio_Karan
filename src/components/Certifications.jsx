@@ -38,7 +38,7 @@ const CERTS = [
     title: 'BOOTSTRAP Training',
     issuer: 'EduPyramids · IIT Bombay Spoken Tutorial',
     via: 'via Seven Mentor and Training',
-    date: ' October 2026',
+    date: 'October 2026',
     score: '90.00%',
     certificateUrl: '/certificates/BOOTSTRAP-Training-Certificate.pdf',
   },

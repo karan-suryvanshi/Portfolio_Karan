@@ -15,6 +15,8 @@ export default function Contact() {
 
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+  const [firstName, setFirstName] = useState('')
 
   const update = (k) => (e) => {
     setForm(f => ({
@@ -25,7 +27,7 @@ export default function Contact() {
 
   const submit = (e) => {
     e.preventDefault()
-
+    setError('')
     setSending(true)
 
     const templateParams = {
@@ -46,6 +48,7 @@ export default function Contact() {
       .then(() => {
         setSending(false)
         setSent(true)
+        setFirstName(form.name.trim().split(/\s+/)[0])
 
         setForm({
           name: '',
@@ -53,12 +56,9 @@ export default function Contact() {
           message: ''
         })
       })
-      .catch((error) => {
+      .catch(() => {
         setSending(false)
-
-        console.error('EmailJS Error:', error)
-
-        alert('Failed to send message. Please try again.')
+        setError('Your message could not be sent right now. Please try again or email me directly.')
       })
   }
 
@@ -125,6 +125,8 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={update('name')}
+                      name="name"
+                      autoComplete="name"
                       placeholder="Your name"
                     />
 
@@ -142,6 +144,8 @@ export default function Contact() {
                       type="email"
                       value={form.email}
                       onChange={update('email')}
+                      name="email"
+                      autoComplete="email"
                       placeholder="you@example.com"
                     />
 
@@ -159,11 +163,14 @@ export default function Contact() {
                       rows={5}
                       value={form.message}
                       onChange={update('message')}
+                      name="message"
                       placeholder="What are you building?"
                     />
 
                   </label>
 
+
+                  {error && <p className="contact__error" role="alert">{error}</p>}
 
                   <button
                     type="submit"
@@ -178,19 +185,22 @@ export default function Contact() {
                     )}
 
                   </button>
+                  <p className="contact__privacy">
+                    Submitting sends your name, email, and message through EmailJS so I can reply.
+                  </p>
 
                 </>
 
               ) : (
 
-                <div className="contact__success">
+                <div className="contact__success" role="status" aria-live="polite">
 
                   <span className="code-string">
                     ✓ 200 OK
                   </span>
 
                   <p>
-                    Thanks, {form.name.split(' ')[0] || 'friend'} —
+                    Thanks, {firstName || 'friend'} —
                     message received. I'll reply within a day or two.
                   </p>
 

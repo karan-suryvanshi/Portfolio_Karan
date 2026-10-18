@@ -1,7 +1,7 @@
 .about__grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
+  gap: clamp(36px, 6vw, 76px);
   margin-top: 20px;
   justify-items: stretch;
   width: 100%;
@@ -32,12 +32,12 @@
 .stat-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 22px 18px;
+  border-radius: 16px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .stat-card:hover {
   border-color: var(--muted-2);
@@ -58,4 +58,11 @@
 
 @media (max-width: 860px) {
   .about__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .about__stats { gap: 11px; }
+  .stat-card { padding: 19px 15px; }
+  .stat-card__value { font-size: 24px; }
+  .stat-card__label { font-size: 11px; }
 }

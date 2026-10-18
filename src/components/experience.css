@@ -1,7 +1,14 @@
 .log {
   display: flex;
   flex-direction: column;
-  max-width: 720px;
+  max-width: 760px;
+}
+
+@media (max-width: 480px) {
+  .log__entry { gap: 14px; }
+  .log__content { padding-bottom: 34px; }
+  .log__role { font-size: 17px; }
+  .log__msg { font-size: 14px; }
 }
 
 .log__entry {
@@ -23,6 +30,7 @@
   border: 2px solid var(--cyan);
   flex-shrink: 0;
   margin-top: 6px;
+  box-shadow: 0 0 16px rgba(141, 230, 223, 0.22);
 }
 
 .log__line {

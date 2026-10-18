@@ -1,51 +1,8 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { RESUME_URL } from '../constants.js'
 import './hero.css'
 
-const LINES = [
-  { text: "const developer = {", cls: 'plain' },
-  { text: "  name: 'Karan Suryavanshi',", cls: 'string', indent: true },
-  { text: "  role: 'Fresher · Full-Stack Developer',", cls: 'string', indent: true },
-  { text: "  stack: ['React', 'Node', 'PostgreSQL'],", cls: 'string', indent: true },
-  { text: "  status: 'open to first opportunity',", cls: 'string', indent: true },
-  { text: "  eager: true,", cls: 'const', indent: true },
-  { text: "};", cls: 'plain' },
-]
-
-function useTypewriter(lines, speed = 18, lineDelay = 140) {
-  const [rendered, setRendered] = useState([])
-  const [done, setDone] = useState(false)
-
-  useEffect(() => {
-    let cancelled = false
-    async function run() {
-      const acc = []
-      for (const line of lines) {
-        let current = ''
-        acc.push('')
-        setRendered([...acc])
-        for (let i = 0; i < line.text.length; i++) {
-          if (cancelled) return
-          current += line.text[i]
-          acc[acc.length - 1] = current
-          setRendered([...acc])
-          await new Promise(r => setTimeout(r, speed))
-        }
-        await new Promise(r => setTimeout(r, lineDelay))
-      }
-      if (!cancelled) setDone(true)
-    }
-    run()
-    return () => { cancelled = true }
-  }, [lines, speed, lineDelay])
-
-  return { rendered, done }
-}
-
 export default function Hero() {
-  const { rendered, done } = useTypewriter(LINES)
-
   return (
     <section id="home" className="hero">
       <div className="container hero__grid">
@@ -66,11 +23,18 @@ export default function Hero() {
             ends, pragmatic backend APIs, and a habit of finishing what I start.
             Looking for my first role to grow fast and contribute from day one.
           </p>
+          <ul className="hero__facts" aria-label="About Karan">
+            <li><span>Name</span><strong>Karan Suryavanshi</strong></li>
+            <li><span>Role</span><strong>Fresher · Full-Stack Developer</strong></li>
+            <li><span>Stack</span><strong>React · Java · SQL</strong></li>
+            <li><span>Status</span><strong>Open to my first opportunity</strong></li>
+            <li><span>Mindset</span><strong>Eager to learn and build</strong></li>
+          </ul>
           <div className="hero__actions">
-            <a href="#work" className="btn btn--primary" onClick={(e) => { e.preventDefault(); document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' }) }}>
+            <a href="#work" className="btn btn--primary">
               View work <span className="arrow">→</span>
             </a>
-            <a href="#contact" className="btn btn--ghost" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}>
+            <a href="#contact" className="btn btn--ghost">
               Say hello
             </a>
             <a className="btn btn--ghost" href={RESUME_URL} target="_blank" rel="noopener noreferrer">
@@ -84,35 +48,18 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.div
-          className="hero__terminal"
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
-        >
-          <div className="terminal">
-            <div className="terminal__bar">
-              <span className="dot dot--r" /><span className="dot dot--y" /><span className="dot dot--g" />
-              <span className="terminal__title">karan.js</span>
-            </div>
-            <div className="terminal__body">
-              {rendered.map((text, i) => (
-                <div className={`terminal__line ${LINES[i]?.indent ? 'is-indent' : ''}`} key={i}>
-                  <span className="terminal__gutter">{i + 1}</span>
-                  <span className={`terminal__code code-${LINES[i]?.cls}`}>{text}</span>
-                  {i === rendered.length - 1 && !done && <span className="blink terminal__cursor">▍</span>}
-                </div>
-              ))}
-              {done && (
-                <div className="terminal__line">
-                  <span className="terminal__gutter">{LINES.length + 1}</span>
-                  <span className="terminal__code code-plain"><span className="blink">▍</span></span>
-                </div>
-              )}
-            </div>
+        <div className="hero__visual">
+          <div className="hero__portrait">
+            <img
+              src="/karan-portrait.webp"
+              alt="Karan Suryavanshi at his desk"
+              width="768"
+              height="1365"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
-          <div className="hero__glow" />
-        </motion.div>
+        </div>
       </div>
     </section>
   )

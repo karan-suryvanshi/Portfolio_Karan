@@ -7,7 +7,7 @@
 .cert-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 18px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -79,6 +79,15 @@
 .cert-card__link {
   color: var(--lime);
   transition: transform 0.15s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .cert-card__link:hover { transform: translateX(3px); }
+
+@media (max-width: 480px) {
+  .certs__grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .cert-card { padding: 20px; }
+  .cert-card__footer { gap: 8px; flex-wrap: wrap; }
+  .cert-card__link { font-size: 11px; }
+}

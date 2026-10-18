@@ -17,7 +17,7 @@ export default function About() {
           variants={reveal}
         >
           <div className="eyebrow"><span className="ln">02</span> // about.jsx</div>
-          <h2 className="section-title">Who's behind the <span className="dot"></span>keyboard</h2>
+          <h2 className="section-title">Who's behind the keyboard<span className="dot">?</span></h2>
         </motion.div>
 
         <div className="about__grid">

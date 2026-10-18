@@ -6,22 +6,22 @@ import './experience.css'
 // new certificates there instead of here.
 const LOG = [
   {
-    role: 'B.Sc, Computer Science',
-    org: 'Shiv Chhatrapati College, Sambhaji Nagar',
-    period: '2021 — 2025',
-    msg: 'Coursework in programming fundamentals, data structures, and web systems.',
-  },
-  {
-    role: 'Personal Projects',
-    org: 'Self-directed',
-    period: '2026— Present',
-    msg: 'Built and shipped full-stack projects like MyShop (React e-commerce app) to learn React, routing, and state management by doing.',
-  },
-  {
     role: 'Full Stack Java Training (in progress)',
     org: 'Seven Mentor and Training, Pune',
     period: 'Present',
     msg: 'Currently completing a full-stack Java course — wrapping up soon, then diving straight into job applications.',
+  },
+  {
+    role: 'Personal Projects',
+    org: 'Self-directed',
+    period: '2026 — Present',
+    msg: 'Built and shipped full-stack projects like MyShop (React e-commerce app) to learn React, routing, and state management by doing.',
+  },
+  {
+    role: 'B.Sc, Computer Science',
+    org: 'Shiv Chhatrapati College, Sambhaji Nagar',
+    period: '2021 — 2025',
+    msg: 'Coursework in programming fundamentals, data structures, and web systems.',
   },
 ]
 

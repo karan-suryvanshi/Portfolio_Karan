@@ -7,7 +7,6 @@ const PROJECTS = [
     name: 'MyShop — Ecommerce',
     desc: 'An e-commerce storefront with category-based product browsing, a persistent cart, and sign-up and login flows.',
     stack: ['React', 'React Router', 'Context API', 'Vite'],
-    stars: 4.5,
     status: 'production',
     repo: 'https://github.com/karan-suryvanshi/MyShop-Ecommerce',
     demo: 'https://karan-ecom.netlify.app',
@@ -17,7 +16,6 @@ const PROJECTS = [
     name: 'Cartzilla Grocery Store',
     desc: 'A grocery storefront with product browsing, search and filters, a shopping cart, login, and a checkout flow.',
     stack: ['React', 'React Router', 'Context API', 'Vite'],
-    stars: 4.5,
     status: 'production',
     repo: 'https://github.com/karan-suryvanshi/Grocery_Store_Web.git',
     demo: 'https://cartzilla-grocery-store.netlify.app/',
@@ -58,7 +56,7 @@ export default function Projects() {
         >
           {PROJECTS.map(p => (
             <motion.article className="repo-card" key={p.name} variants={item} whileHover={{ y: -6 }}>
-              <div className="repo-card__preview" aria-hidden="true">
+              <div className="repo-card__preview">
                 <div className="repo-card__preview-bar">
                   <span className="dot dot--r" />
                   <span className="dot dot--y" />
@@ -68,7 +66,7 @@ export default function Projects() {
                 <img
                   className="repo-card__preview-image"
                   src={p.preview}
-                  alt=""
+                  alt={`${p.name} storefront preview`}
                   loading="lazy"
                   decoding="async"
                 />
@@ -83,7 +81,6 @@ export default function Projects() {
                 {p.stack.map(s => <span key={s}>{s}</span>)}
               </div>
               <div className="repo-card__footer">
-                <span className="repo-card__stars">{p.stars > 0 ? `★ ${p.stars}` : ''}</span>
                 <div className="repo-card__actions">
                   {p.demo && (
                     <a
